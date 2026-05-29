@@ -36,12 +36,17 @@ public class AdminPanel extends JPanel {
             }
         });
 
+     // ... existing code in AdminPanel.java ...
         btnServe.addActionListener(e -> {
             Appointment a = qm.serveNext();
             if (a != null) {
-                Toolkit.getDefaultToolkit().beep(); // System sound
-                JOptionPane.showMessageDialog(this, "CALLING: " + a.getQueueNumber() + "\nPatient: " + a.getPatientName());
+                Toolkit.getDefaultToolkit().beep(); // The sound you heard
                 
+                // >>> ADD THIS LINE BELOW <<<
+                VoiceService.announceTicket(a.getQueueNumber()); 
+                
+                JOptionPane.showMessageDialog(this, "CALLING: " + a.getQueueNumber() + "\nPatient: " + a.getPatientName());
+
                 int confirm = JOptionPane.showConfirmDialog(this, "Done with this ticket?", "Complete Session", JOptionPane.YES_NO_OPTION);
                 if (confirm == JOptionPane.YES_OPTION) {
                     qm.completeTicket(a.getQueueNumber());
@@ -51,7 +56,7 @@ public class AdminPanel extends JPanel {
             }
             refresh();
         });
-
+        // ... rest of your code ...
         btnLogout.addActionListener(e -> frame.showScreen("LOGIN"));
 
         // 4. Auto-refresh timer (Updates the table every 3 seconds)
