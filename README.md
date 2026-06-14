@@ -39,4 +39,4 @@ I built a Queue Management System in Java that connects to a MySQL database. My 
 ---
 **Developer:** Luis  
 **Role:** System-Building Data Scientist  
-**Project Status:** 100% Recruiter-Ready
+**Project Status:** Recruiter-Ready
