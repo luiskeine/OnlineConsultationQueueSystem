@@ -3,7 +3,7 @@
 
 I built a Queue Management System in Java that connects to a MySQL database. My main goal was to go beyond a simple app and learn about things like database security and UI design. I implemented BCrypt for password hashing because I wanted to learn how to handle user data safely. 
 
-![Lobby Display](images/lobby_display.png)
+![Lobby Display](images/lobby_display.png) 
 *Figure 1: The Public Queue Display featuring a modern dark-mode UI.*
 
 ### How it works:
